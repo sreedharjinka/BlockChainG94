@@ -36,7 +36,7 @@ const Dashboard = ({togglePop}) => {
           );
       }}
     const load =async ()=>{
-      const response = await fetch('https://backend-gamma-silk.vercel.app/api/user/getuser', {
+      const response = await fetch('/api/user/getuser', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify({ "address":account })
