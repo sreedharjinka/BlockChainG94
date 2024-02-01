@@ -1,5 +1,5 @@
 import { initializeApp } from 'firebase/app';
-import {FacebookAuthProvider,GithubAuthProvider, GoogleAuthProvider,getAuth} from 'firebase/auth'
+import {FacebookAuthProvider,GithubAuthProvider, GoogleAuthProvider,TwitterAuthProvider,getAuth} from 'firebase/auth'
  const firebaseConfig = {
     apiKey: "AIzaSyBiCRK69avbm0A1wU0dOnbXLYqWQqEp08o",
     authDomain: "dekart-d71d1.firebaseapp.com",
@@ -16,4 +16,5 @@ import {FacebookAuthProvider,GithubAuthProvider, GoogleAuthProvider,getAuth} fro
   const Gprovider = new GoogleAuthProvider
   const Fbprovider = new FacebookAuthProvider
   const Gitprovider = new GithubAuthProvider
-  export {auth, Gprovider, Fbprovider, Gitprovider}
+  const Twprovider = new TwitterAuthProvider
+  export {auth, Gprovider, Fbprovider, Gitprovider,Twprovider}
