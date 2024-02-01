@@ -44,7 +44,7 @@ const Login= () => {
             console.log(err,"error")
         })
     }
-              const handleTwClick=()=>{
+        const handleTwClick=()=>{
         signInWithPopup(auth,Gitprovider).then((res)=>{
             console.log(res,"userData")
             localStorage.setItem('user', JSON.stringify(res))
