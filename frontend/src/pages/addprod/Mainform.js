@@ -1,4 +1,4 @@
-import { useContext, useState,useEffect } from 'react';
+import { useContext, useState } from 'react';
 import React from 'react'
 import Page1 from './page1';
 import Page2 from './page2';
@@ -8,10 +8,9 @@ import { ContractContext } from '../../context/ContractContext';
 import { useList } from '../../hooks/useList';
 
 const Mainform = () => {
-  const {list, error, isLoading} = useList()
+  const {list} = useList()
   const contract =useContext(ContractContext)
   const market=contract.market
-  const provider=contract.provider
   const seller =contract.seller
   const account=contract.account
   const [step, setStep] = useState(0);

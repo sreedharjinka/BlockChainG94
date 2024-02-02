@@ -1,12 +1,12 @@
 import './product.css'
 import { ContractContext } from '../../context/ContractContext';
-import { useContext,useState,useEffect } from 'react';
+import { useContext,useState } from 'react';
 import {useMakeBid} from '../../hooks/useMakeBid'
 import { useStatusUpdate } from '../../hooks/useStatusUpdate';
 const ethers = require('ethers')
 
 const Product = ({ val, togglePop }) => {
-    const {statusUpdate,error}=useStatusUpdate()
+    const {statusUpdate}=useStatusUpdate()
     const {makebid}=useMakeBid();
     const contract =useContext(ContractContext)
     const market=contract.market
@@ -91,13 +91,11 @@ const Product = ({ val, togglePop }) => {
 
       const { img,  des, uname, price,state,city,pincode,phone,email,address,category,blockchainId,bids,productStatus} = val
 
-        if (productStatus==1) {  
+        if (productStatus==0 || productStatus==1) {  
             try{        
             market.connect(provider).highestBidderInfo(blockchainId).then((highestbid) => {
                 setHighestBidder(highestbid[0])
                 setStoe(highestbid[1].toString())
-                // console.log(highestbid[1].toString(),"high")
-                // console.log(ethers.parseUnits(highestbid[1].toString(), 'ether'),"pu")
           });
         }catch(error){
             console.log(error)
@@ -128,7 +126,6 @@ const Product = ({ val, togglePop }) => {
     
     market.connect(provider).productIdInStore(blockchainId).then((sellAcc)=>{
         setSellAcc(sellAcc)
-        // console.log(sellAcc)
     })
     
     return (

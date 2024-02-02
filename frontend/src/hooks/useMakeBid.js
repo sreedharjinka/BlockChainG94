@@ -10,7 +10,7 @@ export const useMakeBid = () => {
     setIsLoading(true)
     setError(null)
   
-    const response = await fetch('/api/user/makebid', {
+    const response = await fetch('https://backend-gamma-silk.vercel.app/api/user/makebid', {
       method: 'PUT',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({blockchainId:blockchainId,bid:{amount:bid,bidder:account},exists:bidexists})

@@ -1,4 +1,4 @@
-import {React,useEffect,useState} from 'react';
+import {React,useState} from 'react';
 import Header from '../common/Header';
 import Product from '../recent/product';
 import Dashboard from './Dashboard';

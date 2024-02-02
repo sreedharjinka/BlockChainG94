@@ -5,7 +5,7 @@ export const useStatusUpdate = () =>{
     const statusUpdate =async (blockchainId,status,address)=>{
         setError(null)
 
-        const response = await fetch('/api/user/updatestatus', {
+        const response = await fetch('https://backend-gamma-silk.vercel.app/api/user/updatestatus', {
             method: 'PUT',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({blockchainId,status,account:address })

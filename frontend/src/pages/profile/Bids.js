@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 
 const handleClick =async(blockchainId,togglePop)=>{
-  const response = await fetch('/api/user/getproduct', {
+  const response = await fetch('https://backend-gamma-silk.vercel.app/api/user/getproduct', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({ "blockchainId":blockchainId })
@@ -25,13 +25,15 @@ const TableRow = ({ product,togglePop,index}) => {
 
 
 const Bids = ({togglePop,user}) => {
-    const [products,setProducts]=useState([])
+  const [products,setProducts]=useState([])
+  useEffect(() => {
     try {
       const products =user.bids
       setProducts(products)
     } catch (error) {
       console.log(error)
     }
+  }, [user]);
   return (
     <div>
       <section class="attendance">

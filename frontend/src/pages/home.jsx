@@ -14,7 +14,7 @@ const Home = () => {
     console.log("togglepop",val)
   };
   const load =async()=>{
-    const response = await fetch('/api/user/allprods', {
+    const response = await fetch('https://backend-gamma-silk.vercel.app/api/user/allprods', {
       method: 'GET',
       headers: {'Content-Type': 'application/json'},
     })

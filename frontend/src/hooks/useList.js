@@ -10,7 +10,7 @@ export const useList = () => {
     setIsLoading(true)
     setError(null)
   
-    const response = await fetch('/api/user/list', {
+    const response = await fetch('https://backend-gamma-silk.vercel.app/api/user/list', {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({blockchainId,uname,des,category,img,price,phone,city,address,state,email,pincode,condition,account })
