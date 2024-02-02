@@ -25,7 +25,7 @@ export const ContractContextProvider = ({ children }) => {
       const account = await acc.getAddress();
       SetAccount(account)
       setSeller(acc)
-      // const response = await fetch('https://backend-gamma-silk.vercel.app/api/user/getuser', {
+      // const response = await fetch('https://block-chain-g94-backend.vercel.app/api/user/getuser', {
       //   method: 'POST',
       //   headers: {'Content-Type': 'application/json'},
       //   body: JSON.stringify({ "address":account })

@@ -1,7 +1,7 @@
 import React, { useState ,useEffect} from "react";
 
 const handleClick =async(blockchainId,togglePop)=>{
-  const response = await fetch('https://backend-gamma-silk.vercel.app/api/user/getproduct', {
+  const response = await fetch('https://block-chain-g94-backend.vercel.app/api/user/getproduct', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({ "blockchainId":blockchainId })
